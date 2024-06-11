@@ -1,0 +1,133 @@
+---
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {title ? title + " - StopMalwareContent" : "StopMalwareContent"}
+    </title>
+    <meta
+      name="description"
+      content="Stop Malware Content is a browser extension that blocks harmful or  potentially unwanted websites. Available for Mozilla Firefox and Google Chrome."
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="brand">
+        <span>StopMalwareContent</span>
+      </a>
+      <div class="links">
+        <a href="/">About</a>
+        <a href="/sites">Sites</a>
+        <a href="/extension">Extension</a>
+      </div>
+    </nav>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <span
+        >Stop Malware Content is open source and licensed under CC-BY-SA-4.0
+        license.</span
+      >
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    font-family: "Noto Sans", sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.3em;
+  }
+  p {
+    margin-bottom: 0.5em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    border-bottom: 1px solid #535353;
+    margin-bottom: 1em;
+  }
+
+  nav .brand {
+    font-size: 1.5em;
+    color: #e43232;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  nav .links {
+    display: flex;
+    gap: 0.5em;
+  }
+
+  nav .links a {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+  }
+
+  nav .links a:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  main {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1em;
+    flex: 1 1 auto;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  footer {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    border-top: 1px solid #535353;
+    margin-top: 1em;
+    color: #ccc;
+    text-align: center;
+  }
+</style>
