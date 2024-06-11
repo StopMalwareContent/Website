@@ -6,5 +6,4 @@ export default defineConfig({
     enabled: false,
   },
   site: "https://stopmalwarecontent.github.io",
-  base: "/",
 })
