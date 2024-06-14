@@ -48,6 +48,30 @@ const { title } = Astro.props
         <a href="/sites">Sites</a>
         <a href="/extension">Extension</a>
       </div>
+      <div class="mobileNav hidden">
+        <a href="/">About</a>
+        <a href="/sites">Sites</a>
+        <a href="/extension">Extension</a>
+      </div>
+      <button class="toggleMobileNav" id="btnToggleMobileNav"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-menu"
+          ><line x1="4" x2="20" y1="12" y2="12"></line><line
+            x1="4"
+            x2="20"
+            y1="6"
+            y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg
+        ></button
+      >
     </nav>
     <main>
       <slot />
@@ -58,6 +82,13 @@ const { title } = Astro.props
         license.</span
       >
     </footer>
+    <script>
+      document
+        .getElementById("btnToggleMobileNav")
+        ?.addEventListener("click", () => {
+          document.querySelector(".mobileNav")?.classList.toggle("hidden")
+        })
+    </script>
   </body>
 </html>
 
@@ -96,6 +127,7 @@ const { title } = Astro.props
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;
+    height: 60px;
     padding: 1em;
     border-bottom: 1px solid #535353;
     margin-bottom: 1em;
@@ -127,6 +159,52 @@ const { title } = Astro.props
     background: rgba(255, 255, 255, 0.3);
   }
 
+  @media (max-width: 700px) {
+    nav .links {
+      display: none;
+    }
+
+    .toggleMobileNav {
+      display: unset;
+    }
+  }
+
+  @media (min-width: 700px) {
+    .toggleMobileNav {
+      display: none;
+    }
+  }
+
+  .mobileNav {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .mobileNav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0.5em;
+    border-radius: 5px;
+  }
+
+  .mobileNav a:hover {
+    background: #e43232;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   main {
     max-width: 1000px;
     width: 100%;
@@ -137,6 +215,23 @@ const { title } = Astro.props
 
   a {
     color: #fff;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    background: #e43232;
+    color: #fff;
+    border: none;
+    padding: 0.3em 0.5em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.8;
   }
 
   footer {
