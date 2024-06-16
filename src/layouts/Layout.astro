@@ -77,10 +77,15 @@ const { title } = Astro.props
       <slot />
     </main>
     <footer>
-      <span
-        >Stop Malware Content is open source and licensed under CC-BY-SA-4.0
-        license.</span
-      >
+      <p>
+        Stop Malware Content is open source and licensed under CC-BY-SA-4.0
+        license.
+      </p>
+      <p>
+        © Lodine Software / <a href="/legal/privacy">Privacy Policy</a> / <a
+          href="/legal/terms">Terms of Use</a
+        >
+      </p>
     </footer>
     <script>
       document
@@ -118,6 +123,9 @@ const { title } = Astro.props
   }
   p {
     margin-bottom: 0.5em;
+  }
+  p.secondary {
+    color: #c2c2c2;
   }
 
   nav {
@@ -217,6 +225,15 @@ const { title } = Astro.props
     color: #fff;
   }
 
+  input {
+    background: #0f0f0f;
+    color: #fff;
+    border: 1px solid #535353;
+    border-radius: 5px;
+    padding: 0.3em 0.5em;
+    font-size: 1em;
+  }
+
   button {
     display: flex;
     align-items: center;
@@ -227,6 +244,7 @@ const { title } = Astro.props
     border: none;
     padding: 0.3em 0.5em;
     border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
   }
 
@@ -243,5 +261,26 @@ const { title } = Astro.props
     margin-top: 1em;
     color: #ccc;
     text-align: center;
+  }
+
+  .note-info {
+    border-left: 5px #5885ff solid;
+    padding: 0.5em;
+    border-radius: 5px;
+    background: #5885ff10;
+  }
+
+  .note-warn {
+    border-left: 5px #ff6600 solid;
+    padding: 0.5em;
+    border-radius: 5px;
+    background: rgba(255, 188, 88, 0.178);
+  }
+
+  .note-danger {
+    border-left: 5px #ff5858 solid;
+    padding: 0.5em;
+    border-radius: 5px;
+    background: #ff585810;
   }
 </style>

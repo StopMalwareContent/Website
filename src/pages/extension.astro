@@ -27,18 +27,26 @@ import Layout from "../layouts/Layout.astro"
       height="150"
     />
   </a>
-  <p>The Chrome addon works with other Chromium-based browsers like Microsoft Edge.</p>
+  <p class="secondary chromium-notice note-info">
+    The Chrome addon works with other Chromium-based browsers like Microsoft
+    Edge, etc.
+  </p>
 </Layout>
 
 <style>
   a {
     text-decoration: none;
   }
+
   img {
     width: 172px;
     height: 60px;
     object-fit: contain;
     background: #fff;
     border-radius: 5px;
+  }
+
+  .chromium-notice {
+    margin-top: 0.3em;
   }
 </style>
