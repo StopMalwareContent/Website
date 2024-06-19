@@ -15,29 +15,36 @@ const data: IllegalSite[] = await response.json()
 <Layout title="Blacklisted Sites">
   <h1>List of blacklisted sites</h1>
   <p>There are {data.length} sites listed here. Press CTRL+F to search for a specific site.</p>
-  <table>
-    <tr>
-      <th>Domain</th>
-      <th>Reason</th>
-      <th>Notes</th>
-    </tr>
-    {
-      data.map((site: IllegalSite) => (
-        <tr>
-          {/* Do not delete this strange comments, it's made to remove spaces */}
-          <td><!--
-          -->{site.domain}<!--
-          -->{site.path.length === 1 ? "" : site.path}
-          </td>
-          <td>{site.reason}</td>
-          <td>{site.notes}</td>
-        </tr>
-      ))
-    }
-  </table>
+  <details>
+    <summary>Click here to see listed sites</summary>
+    <table>
+      <tr>
+        <th>Domain</th>
+        <th>Reason</th>
+        <th>Notes</th>
+      </tr>
+      {
+        data.map((site: IllegalSite) => (
+          <tr>
+            {/* Do not delete this strange comments, it's made to remove spaces */}
+            <td><!--
+            -->{site.domain}<!--
+            -->{site.path.length === 1 ? "" : site.path}
+            </td>
+            <td>{site.reason}</td>
+            <td>{site.notes}</td>
+          </tr>
+        ))
+      }
+    </table>
+  </details>
 </Layout>
 
 <style>
+  summary {
+    cursor: pointer;
+  }
+
   table {
     margin-top: 1em;
   }
