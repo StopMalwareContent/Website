@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets"
+
 const { title } = Astro.props
 ---
 
@@ -26,21 +28,7 @@ const { title } = Astro.props
   <body>
     <nav>
       <a href="/" class="brand">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-triangle-alert"
-          ><path
-            d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
-          ></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg
-        >
+        <Image src="/assets/logo.webp" alt="" width="40" height="40" />
         <span>StopMalwareContent</span>
       </a>
       <div class="links">
@@ -98,6 +86,10 @@ const { title } = Astro.props
 </html>
 
 <style is:global>
+  :root {
+    --primary: #e43232;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -111,6 +103,7 @@ const { title } = Astro.props
     font-family: "Noto Sans", sans-serif;
     background: #0f0f0f;
     color: #fff;
+    text-shadow: 0 0 5px #000;
   }
 
   h1,
@@ -146,7 +139,7 @@ const { title } = Astro.props
     align-items: center;
     gap: 0.3em;
     font-size: 1.5em;
-    color: #e43232;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 700;
   }
@@ -206,7 +199,7 @@ const { title } = Astro.props
   }
 
   .mobileNav a:hover {
-    background: #e43232;
+    background: var(--primary);
   }
 
   .hidden {
@@ -223,6 +216,11 @@ const { title } = Astro.props
 
   a {
     color: #fff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   input {
@@ -239,7 +237,7 @@ const { title } = Astro.props
     align-items: center;
     justify-content: center;
     gap: 0.3em;
-    background: #e43232;
+    background: var(--primary);
     color: #fff;
     border: none;
     padding: 0.3em 0.5em;

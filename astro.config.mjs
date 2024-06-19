@@ -5,5 +5,5 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-  site: "https://stopmalwarecontent.pages.dev",
+  site: "https://stopmalwarecontent.lodine.xyz",
 })

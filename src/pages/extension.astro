@@ -1,51 +1,25 @@
 ---
-import Image from "astro/components/Image.astro"
 import Layout from "../layouts/Layout.astro"
+import ExternalLink from "../components/ExternalLink.astro"
+import GetExtensionBadges from "../components/GetExtensionBadges.astro"
 ---
 
 <Layout title="Extension">
   <h1>Get extension</h1>
   <p>Get the StopMalwareContent extension for your browser</p>
-  <a
-    href="https://go.lodine.xyz/smc-firefox"
-    target="_blank"
-    rel="noopener noreferrer">
-    <Image
-      src="/assets/firefox-badge.webp"
-      alt="Get the Add-on"
-      width="172"
-      height="60"
-    />
-  </a><a
-    href="https://go.lodine.xyz/smc-chrome"
-    target="_blank"
-    rel="noopener noreferrer">
-    <Image
-      src="/assets/chrome-badge.webp"
-      alt="Get the Addon"
-      width="496"
-      height="150"
-    />
-  </a>
+  <GetExtensionBadges />
   <p class="secondary chromium-notice note-info">
-    The Chrome extension also works with other Chromium-based browsers like Microsoft
-    Edge, Brave, Opera, and more. <i><a href="https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium" target="_blank" rel="noopener noreferrer" class="chromium-wikipedia">See the full list of Chromium browsers on Wikipedia.</a></i>
+    The Chrome extension also works with other Chromium-based browsers like
+    Microsoft Edge, Brave, Opera, and more. <i>
+      <ExternalLink
+        to="https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium"
+        >(See the full list of Chromium browsers on Wikipedia)</ExternalLink
+      ></i
+    >.
   </p>
 </Layout>
 
 <style>
-  a {
-    text-decoration: none;
-  }
-
-  img {
-    width: 172px;
-    height: 60px;
-    object-fit: contain;
-    background: #fff;
-    border-radius: 5px;
-  }
-
   .chromium-notice {
     margin-top: 0.3em;
   }

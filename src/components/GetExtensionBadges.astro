@@ -1,0 +1,35 @@
+---
+import Image from "astro/components/Image.astro"
+import ExternalLink from "./ExternalLink.astro"
+---
+
+<ExternalLink to="https://go.lodine.xyz/smc-firefox">
+  <Image
+    src="/assets/firefox-badge.webp"
+    alt="Get the Add-on"
+    width="172"
+    height="60"
+  /></ExternalLink
+>
+<ExternalLink to="https://go.lodine.xyz/smc-chrome">
+  <Image
+    src="/assets/chrome-badge.webp"
+    alt="Get the Addon"
+    width="496"
+    height="150"
+  /></ExternalLink
+>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 172px;
+    height: 60px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 5px;
+  }
+</style>

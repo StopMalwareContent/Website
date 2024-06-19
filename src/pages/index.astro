@@ -1,29 +1,91 @@
 ---
+import ExternalLink from "../components/ExternalLink.astro"
+import GetExtensionBadges from "../components/GetExtensionBadges.astro"
 import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout title="About">
-  <h1>About</h1>
-  <p>
-    We built a browser extension designed to combat the issue of harmful,
-    potentially unwanted websites, but mostly we focus on "illegally distributing"
-    websites.
-  </p>
-  <p>
-    What is illegal distribution? It's when some people redistributed
-    content onto a third party site without any acknowledgement or permission
-    of their developers. It's bad because original creators don't earn money,
-    but the bigger problem comes when some websites add malicious behavior to
-    redistributed content. This is not only harmful for end users, it's also
-    possible that people will start to blame the legitimate, original creators!
-  </p>
-  <p>
-    I think you got the idea, that's why we've created this extension. You might
-    notice that this extension does something like StopModReposts - and
-    yeah, I really got inspired from this extension to make this one. The
-    saddest thing is that StopModReposts is now mostly inactive, that's the reason
-    why I've created this extension. It's not a fork of StopModReposts,
-    however source code of StopMalwareContent is open source and licensed
-    under CC-BY-SA-4.0 license.
-  </p>
+  <div class="background"></div>
+  <section>
+    <h1>StopMalwareContent</h1>
+    <p>Restrics access to harmful or potentionally unwanted websites.</p>
+    <GetExtensionBadges />
+  </section>
+  <section>
+    <h2>About StopMalwareContent</h2>
+    <p>
+      A StopMalwareContent browser extension, as the name suggests stops malware
+      content by preventing you the user form visiting malicious and potentially
+      unwanted websites (PUWs).
+    </p>
+    <p>
+      What are malicious and potentially unwanted websites? Malicious websites
+      it's a websites that directly promote malware, or try to steal your
+      credentials (phishing websites) or perform any other illegal activities.
+      But potentially unwanted websites are different, they may not try to
+      directly throw viruses at you, but they may try to promote their adware
+      extension for example! Remember websites that try to install their
+      suspicious search engine? We flag them as potentially unwanted, as they
+      may not directly harm your computer. However we also block websites with
+      specific reasons, for example we can block specific URLs, like GitHub
+      repositories that contain viruses, or other example, we can block specific
+      YouTube video that promotes malicious content.
+    </p>
+    <p>
+      We made this all for your privacy and safety. About privacy, we don't
+      store your personal information or track websites that you visit, we only
+      gather information like your browser, operating system, etc. with purpose
+      of analyzing and improving our services.
+    </p>
+    <p>
+      StopMalwareContent is completely free and open source, licensed under
+      CC-BY-SA-4.0 license. Visit our GitHub repository to learn more:
+      <ExternalLink to="https://github.com/StopMalwareContent/Extension"
+        >https://github.com/StopMalwareContent/Extension</ExternalLink
+      >.
+    </p>
+  </section>
 </Layout>
+
+<style lang="scss">
+  .background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -20;
+    background: linear-gradient(to top, var(--primary) 0%, #0f0f0f 100%);
+    animation: 3s background-up cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  @keyframes background-up {
+    0% {
+      height: 0%;
+      opacity: 0;
+    }
+    100% {
+      height: -100%;
+    }
+  }
+
+  section:nth-child(2) {
+    text-align: center;
+    font-size: calc(100% + 0.3em);
+
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
+  section:nth-child(3) {
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
+  section {
+    border-bottom: 1px solid var(--primary);
+    padding: 5em 0;
+  }
+</style>
