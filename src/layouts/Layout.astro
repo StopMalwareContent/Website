@@ -65,6 +65,21 @@ const { title } = Astro.props
       <slot />
     </main>
     <footer>
+      <div class="stats">
+        <img
+          alt="Dynamic JSON Badge"
+          src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsmc.ldne.xyz%2Fstats&query=sites&label=sites"
+        />
+
+        <img
+          alt="Mozilla Add-on Users"
+          src="https://img.shields.io/amo/users/stop-malware-content?logo=firefox-browser&color=%23FF7139&label=firefox users"
+        />
+        <img
+          alt="Chrome Web Store Users"
+          src="https://img.shields.io/chrome-web-store/users/fiaoknmfemniellplflmbpbnagnpphkg?logo=google-chrome&color=%234285F4&label=chrome users"
+        />
+      </div>
       <p>
         StopMalwareContent is open source and licensed under CC-BY-SA-4.0
         license.
@@ -256,7 +271,14 @@ const { title } = Astro.props
     opacity: 0.8;
   }
 
+  li {
+    margin-left: 1em;
+  }
+
   footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;
@@ -265,6 +287,15 @@ const { title } = Astro.props
     margin-top: 1em;
     color: #ccc;
     text-align: center;
+
+    .stats {
+      pointer-events: none;
+      user-select: none;
+    }
+
+    p {
+      margin: 0;
+    }
   }
 
   .note-info {
