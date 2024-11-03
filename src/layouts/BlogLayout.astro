@@ -18,7 +18,7 @@ const { title } = Astro.props
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
-    <img src="/assets/blog-background.webp" alt="" class="blog-background">
+    <img src="/assets/blog-background.webp" alt="" class="blog-background" />
     <nav>
       <a href="/" class="brand">
         <Image src="/assets/logo.webp" alt="" width="40" height="40" />
@@ -114,7 +114,7 @@ const { title } = Astro.props
     z-index: -10;
     pointer-events: none;
     user-select: none;
-    filter: blur(15px) brightness(.3);
+    filter: blur(15px) brightness(0.3);
   }
 
   body {
@@ -129,7 +129,7 @@ const { title } = Astro.props
   }
 
   header {
-    font-size: calc(100% + .1em);
+    font-size: calc(100% + 0.1em);
 
     .secondary {
       font-style: italic;
