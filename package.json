@@ -1,7 +1,7 @@
 {
   "name": "stopmalwarecontent-website",
   "type": "module",
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@10.12.1",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
